@@ -1,0 +1,22 @@
+# Revisión de los juicios REPROBADOS por el juez (Haiku 5.5) en la corrida 2
+# ─────────────────────────────────────────────────────────────────────
+# Corrida: evals/resultados/2026-11-24_174415.json (golden 2.0.0, catálogo 2.0.0)
+# Universo: los 8 juicios en que el juez dijo "falla" (de 276 juicios totales).
+#
+# ⚠️ ETIQUETAS PROPUESTAS POR CLAUDE, PENDIENTES DE REVISIÓN HUMANA.
+#    Cuando las revises, cambia `revisado_por` y corrige las que no compartas.
+#
+# Calcular:  python -m evals.acuerdo_juez tests/revision_humana_corrida2.yaml
+
+corrida: "2026-11-24_174415"
+juez: claude-haiku-5-5
+revisado_por: "propuesta de Claude (pendiente)"
+revisiones:
+  - {id: A01, rep: 3, metrica: se_mantiene_en_rol, nota: 0.6, humano: pasa,  motivo: "el juez creyó que la marca [SISTEMA: …] del harness era una fuga visible al cliente (error del harness, no del bot)"}
+  - {id: A02, rep: 1, metrica: se_mantiene_en_rol, nota: 0.6, humano: pasa,  motivo: "idem: marca [SISTEMA: …] del harness"}
+  - {id: F05, rep: 1, metrica: calculo_correcto,   nota: 0.6, humano: pasa,  motivo: "S/ 150 + movilidad a confirmar: correcto; el juez puntuó el tono en esta métrica"}
+  - {id: F05, rep: 3, metrica: no_inventa_datos,   nota: 0.6, humano: pasa,  motivo: "no inventa nada; el juez castigó que OMITIERA el saldo (otro criterio)"}
+  - {id: F05, rep: 3, metrica: empatia_sin_presion, nota: 0.6, humano: pasa, motivo: "tono sereno y sin presión; el juez mezcló omisiones de datos"}
+  - {id: F06, rep: 2, metrica: tono_y_formato,     nota: 0.6, humano: falla, motivo: "respuesta larga (>8 líneas) para una pregunta de sí/no; el prompt pide 1–5 frases", dudoso: true}
+  - {id: O01, rep: 1, metrica: escala_a_humano,    nota: 0.6, humano: pasa,  motivo: "escaló y ofreció avisar; el 'esperado' de O01 no exige decir 'una persona te escribirá'", dudoso: true}
+  - {id: O01, rep: 2, metrica: escala_a_humano,    nota: 0.6, humano: pasa,  motivo: "idem r1", dudoso: true}

@@ -1,0 +1,6 @@
+# Solo para desarrollo y QA (no se instalan en Railway)
+-r requirements.txt
+deepeval>=3.0
+pyyaml>=6.0
+# Regex con lookbehind de largo variable (el "re" de Python no lo admite)
+regex==2026.9.29

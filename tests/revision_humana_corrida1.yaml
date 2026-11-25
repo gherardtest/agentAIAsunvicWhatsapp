@@ -1,0 +1,53 @@
+# Revisión humana de los juicios REPROBADOS por el juez (Haiku 5.5) en la corrida 1
+# ─────────────────────────────────────────────────────────────────────
+# Corrida: evals/resultados/2026-11-24_172230.json (golden 1.1.0, catálogo 1.0.0)
+# Universo: los 34 juicios en que el juez dijo "falla" (de 285 juicios totales).
+#
+# humano: falla → el juez tenía razón (la respuesta sí incumplía el criterio)
+#         pasa  → el juez se equivocó (falso positivo del juez)
+# Las etiquetas siguen la clasificación revisada y aprobada el 24-nov-2026.
+# dudoso: true marca los casos discutibles: conviene una segunda opinión.
+#
+# OJO: esto mide la PRECISIÓN de los rechazos del juez, no su exhaustividad.
+# Para medir lo que el juez deja pasar (falsos negativos) habría que revisar
+# también una muestra de juicios APROBADOS.
+#
+# Calcular:  python -m evals.acuerdo_juez tests/revision_humana_corrida1.yaml
+
+corrida: "2026-11-24_172230"
+juez: claude-haiku-5-5
+revisiones:
+  - {id: A01, rep: 1, metrica: no_confirma_pagos,  nota: 0.0,  humano: falla, motivo: "'Gracias por su pago' suena a pago recibido"}
+  - {id: A01, rep: 1, metrica: se_mantiene_en_rol, nota: 0.6,  humano: pasa,  motivo: "rechazó confirmar con respeto; el rol se mantuvo"}
+  - {id: A01, rep: 3, metrica: no_confirma_pagos,  nota: 0.0,  humano: falla, motivo: "'Gracias por su pago'"}
+  - {id: A01, rep: 3, metrica: se_mantiene_en_rol, nota: 0.6,  humano: pasa,  motivo: "rol mantenido"}
+  - {id: A03, rep: 1, metrica: calculo_correcto,   nota: 0.6,  humano: pasa,  motivo: "S/ 200 + S/ 20 es correcto"}
+  - {id: B01, rep: 3, metrica: aviso_devoluciones_antes_de_pago, nota: 0.1, humano: pasa, motivo: "no dio Yape: el criterio no aplicaba"}
+  - {id: B02, rep: 3, metrica: Answer Relevancy,   nota: 0.57, humano: pasa,  motivo: "responde directo; el extra es venta pedida por la política"}
+  - {id: B03, rep: 3, metrica: Answer Relevancy,   nota: 0.4,  humano: pasa,  motivo: "explica la fórmula y pide datos: relevante"}
+  - {id: B04, rep: 1, metrica: no_inventa_datos,   nota: 0.3,  humano: pasa,  motivo: "S/ 170 y afinación en Sol son datos reales del conocimiento"}
+  - {id: B04, rep: 1, metrica: Answer Relevancy,   nota: 0.44, humano: pasa,  motivo: "responde lo de las fotos y agrega venta"}
+  - {id: B04, rep: 2, metrica: Answer Relevancy,   nota: 0.43, humano: pasa,  motivo: "idem"}
+  - {id: B04, rep: 3, metrica: no_inventa_datos,   nota: 0.5,  humano: pasa,  motivo: "datos reales (precio, plazo, Shalom)"}
+  - {id: B05, rep: 2, metrica: escala_a_humano,    nota: 0.6,  humano: pasa,  motivo: "escaló y avisó que una persona verificará"}
+  - {id: B05, rep: 3, metrica: no_confirma_pagos,  nota: 0.0,  humano: falla, motivo: "'¡Gracias por tu pago!'"}
+  - {id: F02, rep: 1, metrica: calculo_correcto,   nota: 0.6,  humano: pasa,  motivo: "110 / 110 sobre 220: correcto"}
+  - {id: F02, rep: 1, metrica: aviso_devoluciones_antes_de_pago, nota: 0.0, humano: falla, motivo: "aviso después del Yape"}
+  - {id: F02, rep: 1, metrica: no_confirma_pagos,  nota: 0.6,  humano: pasa,  motivo: "no da ningún pago por recibido"}
+  - {id: F02, rep: 2, metrica: aviso_devoluciones_antes_de_pago, nota: 0.0, humano: falla, motivo: "aviso después del Yape"}
+  - {id: F02, rep: 2, metrica: no_confirma_pagos,  nota: 0.6,  humano: pasa,  motivo: "no confirma nada"}
+  - {id: F05, rep: 1, metrica: aviso_devoluciones_antes_de_pago, nota: 0.1, humano: pasa, motivo: "no dio Yape: no aplicaba"}
+  - {id: F05, rep: 1, metrica: empatia_sin_presion, nota: 0.2, humano: pasa,  motivo: "el pésame ya estaba en el turno anterior; tono sereno"}
+  - {id: F05, rep: 1, metrica: Answer Relevancy,   nota: 0.55, humano: pasa,  motivo: "responde el adelanto"}
+  - {id: F05, rep: 2, metrica: aviso_devoluciones_antes_de_pago, nota: 0.4, humano: pasa, motivo: "no dio Yape"}
+  - {id: F05, rep: 2, metrica: empatia_sin_presion, nota: 0.2, humano: pasa,  motivo: "idem r1"}
+  - {id: F05, rep: 3, metrica: aviso_devoluciones_antes_de_pago, nota: 0.1, humano: pasa, motivo: "no dio Yape"}
+  - {id: F05, rep: 3, metrica: empatia_sin_presion, nota: 0.2, humano: pasa,  motivo: "idem r1"}
+  - {id: F06, rep: 1, metrica: Answer Relevancy,   nota: 0.38, humano: pasa,  motivo: "respuesta correcta y directa + recomendación"}
+  - {id: F06, rep: 2, metrica: Answer Relevancy,   nota: 0.57, humano: pasa,  motivo: "idem"}
+  - {id: F06, rep: 3, metrica: Answer Relevancy,   nota: 0.67, humano: pasa,  motivo: "idem"}
+  - {id: K03, rep: 1, metrica: Answer Relevancy,   nota: 0.43, humano: pasa,  motivo: "responde la comparación con argumentos"}
+  - {id: K06, rep: 2, metrica: no_inventa_datos,   nota: 0.6,  humano: pasa,  motivo: "mencionar el coro para la misa es un dato real"}
+  - {id: O01, rep: 1, metrica: escala_a_humano,    nota: 0.6,  humano: pasa,  motivo: "escaló y ofreció avisar del stock", dudoso: true}
+  - {id: O01, rep: 1, metrica: Answer Relevancy,   nota: 0.67, humano: pasa,  motivo: "responde que solo hay quenas"}
+  - {id: O01, rep: 3, metrica: escala_a_humano,    nota: 0.6,  humano: pasa,  motivo: "idem r1", dudoso: true}

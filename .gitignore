@@ -1,0 +1,22 @@
+# Secretos
+.env
+
+# Base de datos (contiene conversaciones y teléfonos de clientes)
+*.db
+*.db-shm
+*.db-wal
+
+# Entorno virtual de Python
+.venv/
+venv/
+
+# Archivos temporales de Python
+__pycache__/
+*.pyc
+
+# Evals y red teaming (resultados locales)
+evals/resultados/
+.deepeval/
+
+node_modules/
+*.log
